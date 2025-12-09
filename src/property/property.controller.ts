@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 
 @Controller('property')
 export class PropertyController {
@@ -17,7 +17,10 @@ export class PropertyController {
   //     return body;
   // }
 
+
+// http status code
   @Post()
+  @HttpCode(202)
   create(@Body('name') name) {
     return name;
   }
